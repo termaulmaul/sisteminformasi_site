@@ -12,7 +12,7 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: white;
             color: #333;
             overflow-x: hidden; /* Menghindari scroll horizontal */
         }
@@ -34,9 +34,8 @@
 
         .logo {
             height: 71px;
-            width: 194px;
+            width: 190px;
             margin-right: 15px;
-            /* Hapus animasi pada logo */
         }
 
         @keyframes bounce {
@@ -93,36 +92,51 @@
             border-radius: 2px;
         }
 
-        nav ul li ul {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: #FFFFFF;
-            padding: 10px 0;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
+        /* Gaya umum untuk dropdown list */
+nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #FFFFFF;
+    padding: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    width: 200px; /* Sesuaikan lebar sesuai kebutuhan */
+}
 
-        nav ul li:hover ul {
-            display: block;
-            opacity: 1;
-        }
+/* Menampilkan dropdown saat hover */
+nav ul li:hover ul {
+    display: block;
+    opacity: 1;
+}
 
-        nav ul li ul li a {
-            padding: 5px 20px;
-            white-space: nowrap;
-            background: none;
-            color: #242632;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
+/* Styling untuk item dropdown */
+nav ul li ul li {
+    margin: 0; /* Menghapus margin vertikal untuk item dropdown */
+}
 
-        nav ul li ul li a:hover {
-            background-color: #f0f0f0;
-        }
+/* Styling link di dalam dropdown */
+nav ul li ul li a {
+    padding: 10px 20px; /* Padding untuk item dropdown */
+    white-space: nowrap; /* Mencegah teks membungkus */
+    background: none;
+    color: #242632;
+    text-decoration: none;
+    display: block; /* Memastikan link memenuhi lebar dropdown */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 99%; /* Memastikan lebar link 100% dari dropdown */
+    box-sizing: border-box; /* Menyertakan padding dalam lebar */
+}
+
+/* Efek hover pada item dropdown */
+nav ul li ul li a:hover {
+    background: linear-gradient(90deg, #0394ba, #9ad5a9); /* Gradient untuk background */
+    color: white; /* Warna font putih */
+}
+        
 
         .btn-daftar {
             background: linear-gradient(90deg, #0394ba, #9ad5a9);
@@ -141,7 +155,7 @@
 
         .banner {
             width: 100%;
-            height: 654px;
+            height: 674px;
             background-image: url('/images/Banner-S1-Informasi-Home.png');
             background-size: cover;
             background-position: center;
@@ -166,6 +180,8 @@
             align-items: flex-start;
             gap: 180px;
             position: relative;
+            margin-top: 100px;
+            margin-bottom: 100px;
         }
 
         .kaprodi-image {
@@ -223,17 +239,20 @@
         }
 
         .about-section {
-    width: 100%;
-    margin: 0;
-    background: linear-gradient(90deg, #0394ba, #9ad5a9);
-    background-size: 200% 200%; /* Memastikan gradient dapat bergerak */
-    padding: 80px 20px;
-    border-radius: 10px;
-    color: white;
-    text-align: center;
-    position: relative;
-    animation: fadeInSection 1.5s ease-out, gradientAnimation 5s ease infinite; /* Menambahkan animasi gradient */
-}
+            width: 100%;
+            margin: 0;
+            background: url('/images/Video-min.png') no-repeat center center;
+            background-size: cover; /* Menutup seluruh area dengan gambar */
+            padding: 80px 20px;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
 
 @keyframes fadeInSection {
     from {
@@ -273,7 +292,7 @@
             margin-left: auto; /* Mengatur margin otomatis untuk mengatur posisi */
             margin-right: auto; /* Mengatur margin otomatis untuk mengatur posisi */
         }
-        
+       
         .about-section br {
             display: none; /* Menghilangkan elemen <br> dari tampilan */
         }        
@@ -283,13 +302,14 @@
             width: 782px;
             height: 440px;
             margin: 0 auto;
+            border-radius: 25px; /* Rounded corners pada kontainer video */
         }
 
         .video-container iframe {
             width: 100%;
             height: 100%;
             border: none;
-            border-radius: 5px; /* Rounded corners pada iframe */
+            border-radius: 25px; /* Rounded corners pada iframe */
         }
 
         .video-container .video-overlay {
@@ -304,7 +324,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 5px; /* Rounded corners pada overlay */
+            border-radius: 25px; /* Rounded corners pada overlay */
             transition: opacity 0.3s ease; /* Animasi perubahan opacity pada overlay */
         }
 
@@ -315,6 +335,112 @@
             background: url('https://img.icons8.com/ios/50/ffffff/play.png') no-repeat center center;
             background-size: contain;
         }
+        .how-to-become-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 80%; /* Menyusutkan lebar kontainer untuk margin otomatis */
+            max-width: 1200px; /* Maksimal lebar kontainer */
+            margin: 40px auto; /* Margin otomatis di kiri dan kanan */
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            padding: 100px;
+            box-sizing: border-box; /* Termasuk padding dalam perhitungan lebar */
+            gap: 40px; /* Ruang antara konten dan gambar */
+        }
+        
+        .how-to-become-content {
+            flex: 1;
+            padding-right: 20px; /* Ruang antara konten dan gambar */
+        }
+        
+        .how-to-become-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: #000; /* Warna font hitam untuk judul */
+        }
+        
+        .how-to-become-content h2 span {
+            background: linear-gradient(90deg, #0394ba, #9ad5a9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .how-to-become-content p {
+            font-size: 18px;
+            color: #888; /* Warna abu untuk teks */
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .how-to-become-content .btn-learn-more {
+            background: linear-gradient(90deg, #0394ba, #9ad5a9);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease, transform 0.3s ease;
+            margin-top: auto;
+        }
+        
+        .how-to-become-content .btn-learn-more:hover {
+            background: linear-gradient(90deg, #027aa4, #7dbf8d);
+            transform: scale(1.05); /* Membesarkan tombol saat hover */
+        }
+        
+        .how-to-become-image {
+            width: 269px;
+            height: 287px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+       
+        .lecturer-section {
+            width: 80%;
+            margin: 40px auto;
+            text-align: center;
+            margin-top: 100px;
+        }
+       
+        .lecturer-section h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            background: linear-gradient(90deg, #0394ba, #9ad5a9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .lecturer-profiles {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        
+        .lecturer-profiles img {
+            width: 30%;
+            height: auto;
+            border-radius: 5px;
+            object-fit: cover;
+        }        
+
+        .btn-see-more {
+            display: inline-block;
+            background: linear-gradient(90deg, #0394ba, #9ad5a9);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        
+        .btn-see-more:hover {
+            background: linear-gradient(90deg, #027aa4, #7dbf8d);
+            transform: scale(1.05);
+        }        
     </style>
 </head>
 
@@ -352,13 +478,30 @@
         </div>
     </div>
     <div class="about-section">
-        <h2>Sekilas tentang S1 Sistem Informasi</h2>
+        <h1>Sekilas tentang S1 Sistem Informasi</h1>
         <p>Kenalan dengan Sistem Informasi ITTP Video berikut berisi penjelasan apa itu Sistem Informasi, ciri khas Sistem Informasi ITTP, kurikulum Sistem Informasi ITTP dan prospek ke depan.</>
         <div class="video-container">
             <div class="video-overlay" onclick="playVideo()"></div>
             <iframe src="https://www.youtube.com/embed/SZKQpEo4q9E" allowfullscreen></iframe>
         </div>
     </div>
+    <div class="how-to-become-container">
+        <div class="how-to-become-content">
+            <h2>Bagaimana Cara Menjadi Mahasiswa <span>S1 Sistem Informasi?</span></h2>
+            <p>Kembangkan minat dan bakat melalui keilmuan terbaru. Kini saatnya industri mencarimu</p>
+            <a href="#" class="btn-learn-more">Lihat Selengkapnya</a>
+        </div>
+        <img src="/images/Gmn-min.png" alt="Gmn-min" class="how-to-become-image">
+    </div>
+    <div class="lecturer-section">
+        <h2>Dosen <span>S1 Sistem Informasi</span></h2>
+        <div class="lecturer-profiles">
+            <img src="/images/Muhamad-Awiet-Wiedanto-Prasetyo-S.Kom_.-M.MSI_.png" alt="Muhamad Awiet Wiedanto Prasetyo S.Kom_.M.MSI">
+            <img src="/images/Resad-SetyadiS.T.S.Si_.MMSI_.png" alt="Resad Setyadi S.T.S.Si.MMSI">
+            <img src="/images/Mahazzam-Afrad-S.Kom_.-M.Kom-1.png" alt="Mahazzam Afrad S.Kom.M.Kom">
+        </div>
+        <a href="#" class="btn-see-more">Lihat Selengkapnya</a>
+    </div>    
     <script>
         function playVideo() {
             const overlay = document.querySelector('.video-overlay');
