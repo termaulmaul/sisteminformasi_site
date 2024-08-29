@@ -1,0 +1,13 @@
+{
+    "minify": true,
+    "options": [
+      "setClasses"
+    ],
+    "feature-detects": [
+      "css/flexbox",
+      "css/transforms",
+      "css/transforms3d",
+      "css/transitions",
+      "css/animations"
+    ]
+  }

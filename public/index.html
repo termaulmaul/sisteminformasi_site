@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Informasi Site</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+    <script src="js/modernizr.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #FFFFFF;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky; /* Menjadikan header tetap di atas */
+            top: 0; /* Memastikan header tetap di posisi atas saat scroll */
+            width: 100%;
+            z-index: 1000; /* Memastikan header berada di atas elemen lain */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Menambahkan bayangan untuk efek depth */
+        }
+
+        .logo {
+            height: 71px;
+            width: 194px;
+            margin-right: 15px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: #242632;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 5px 10px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: linear-gradient(90deg, #0394ba, #9ad5a9);
+        }
+
+        nav ul li a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px; /* Jarak tambahan dari tombol ke underline */
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #0394ba, #9ad5a9);
+            border-radius: 2px;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #FFFFFF;
+            padding: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        nav ul li ul li {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li ul li a {
+            padding: 5px 20px;
+            white-space: nowrap;
+            background: none;
+            color: #242632;
+            text-decoration: none;
+        }
+
+        nav ul li ul li a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .btn-daftar {
+            background: linear-gradient(90deg, #0394ba, #9ad5a9);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .btn-daftar:hover {
+            background: linear-gradient(90deg, #027aa4, #7dbf8d);
+        }
+
+        .banner {
+            width: 100%;
+            height: 654px;
+            background-image: url('/images/Banner-S1-Informasi-Home.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: 40px auto 20px; /* Menambahkan jarak antara banner dan konten */
+            display: flex;
+            align-items: flex-start; /* Memastikan gambar dan konten terletak di atas */
+            gap: 180px; /* Jarak antara gambar dan konten */
+        }
+
+        .kaprodi-image {
+            width: 625px;
+            height: 456px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .content {
+            color: #242632;
+            text-align: justify; /* Rata kanan-kiri untuk teks */
+        }
+
+        h1, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-size: 44px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            font-weight: 400; /* Non-bold font weight for content */
+            margin-bottom: 20px; /* Jarak antar paragraf */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="/images/ittp_logo.png" alt="Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="/" class="active">Beranda</a></li>
+                <li>
+                    <a href="#">Tentang Kami</a>
+                    <ul>
+                        <li><a href="#">Sejarah</a></li>
+                        <li><a href="#">Visi & Misi</a></li>
+                        <li><a href="#">Struktur Organisasi</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Kurikulum</a></li>
+                <li><a href="#">Artikel</a></li>
+                <li><a href="#">Alumni</a></li>
+                <li><a href="#">Final Project</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="btn-daftar">Pendaftaran</a>
+        <img src="/images/si_logo.png" alt="Logo" class="logo">
+    </header>
+    <div class="banner"></div>
+    <div class="container">
+        <img src="/images/Kaprodi-S1-Informasi.png" alt="Kaprodi" class="kaprodi-image">
+        <div class="content">
+            <h1>Sambutan Kaprodi</h1>
+            <p>Salam sejahtera untuk kita semua</p>
+            <p>Selamat datang di website resmi Program Studi S1 Sistem Informasi Fakultas Informatika Institut Teknologi Telkom Purwokerto. Dengan adanya website ini diharapkan dapat memberikan infosi mengenai Program Studi S1 Sistem Informasi Fakultas Informatika Institut Teknologi Telkom Purwokerto.</p>
+            <p>Program Studi S1 Sistem Informasi Fakultas Informatika Institut Teknologi Telkom Purwokerto memiliki visi: “Tahun 2027 menjadi Program Studi berdaya saing Internasional dalam pengembangan dan pengelolaan Sistem Informasi yang mendukung kebutuhan industri serta memiliki kompetensi mandiri dan interpersonal.” Tujuan Program Studi S1 Sistem Informasi Fakultas Informatika Institut Teknologi Telkom Purwokerto yaitu menghasilkan lulusan yang berkompeten di bidang pengembangan dan pengelolaan Sistem Informasi yang berdaya saing internasional.</p>
+        </div>
+    </div>
+</body>
+<script src="js/modernizr.js"></script>
+</html>

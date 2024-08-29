@@ -1,0 +1,20 @@
+{
+  "name": "sisteminformasi_site",
+  "version": "1.0.0",
+  "description": "Website untuk prodi Sistem Informasi",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "build-modernizr": "modernizr -c modernizr-config.json -d public/js/modernizr.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "http-proxy-middleware": "^3.0.0",
+    "jquery": "^3.7.1",
+    "modernizr": "^3.13.1",
+    "serve-index": "^1.9.1",
+    "slick-carousel": "^1.8.1"
+  },
+  "author": "Nama Kamu",
+  "license": "MIT"
+}
