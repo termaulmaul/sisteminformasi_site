@@ -14,6 +14,7 @@
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
+            overflow-x: hidden; /* Menghindari scroll horizontal */
         }
 
         header {
@@ -23,17 +24,31 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            position: sticky; /* Menjadikan header tetap di atas */
-            top: 0; /* Memastikan header tetap di posisi atas saat scroll */
+            position: sticky;
+            top: 0;
             width: 100%;
-            z-index: 1000; /* Memastikan header berada di atas elemen lain */
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Menambahkan bayangan untuk efek depth */
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            animation: fadeIn 1s ease-out; /* Menambahkan animasi fade in pada header */
         }
 
         .logo {
             height: 71px;
             width: 194px;
             margin-right: 15px;
+            /* Hapus animasi pada logo */
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
         }
 
         nav {
@@ -58,18 +73,19 @@
             text-decoration: none;
             font-weight: 600;
             padding: 5px 10px;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, transform 0.3s ease;
         }
 
         nav ul li a:hover,
         nav ul li a.active {
             color: linear-gradient(90deg, #0394ba, #9ad5a9);
+            transform: scale(1.1); /* Membesarkan elemen saat hover */
         }
 
         nav ul li a.active::after {
             content: '';
             position: absolute;
-            bottom: -5px; /* Jarak tambahan dari tombol ke underline */
+            bottom: -5px;
             left: 0;
             width: 100%;
             height: 3px;
@@ -86,15 +102,13 @@
             padding: 10px 0;
             border-radius: 5px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         nav ul li:hover ul {
             display: block;
-        }
-
-        nav ul li ul li {
-            margin: 0;
-            padding: 0;
+            opacity: 1;
         }
 
         nav ul li ul li a {
@@ -103,6 +117,7 @@
             background: none;
             color: #242632;
             text-decoration: none;
+            transition: background-color 0.3s ease;
         }
 
         nav ul li ul li a:hover {
@@ -116,11 +131,12 @@
             border-radius: 5px;
             text-decoration: none;
             font-weight: 600;
-            transition: background 0.3s ease;
+            transition: background 0.3s ease, transform 0.3s ease;
         }
 
         .btn-daftar:hover {
             background: linear-gradient(90deg, #027aa4, #7dbf8d);
+            transform: scale(1.05); /* Membesarkan tombol saat hover */
         }
 
         .banner {
@@ -129,14 +145,27 @@
             background-image: url('/images/Banner-S1-Informasi-Home.png');
             background-size: cover;
             background-position: center;
+            animation: slideIn 1.5s ease-out; /* Animasi slide in pada banner */
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         .container {
             width: 80%;
-            margin: 40px auto 20px; /* Menambahkan jarak antara banner dan konten */
+            margin: 40px auto 20px;
             display: flex;
-            align-items: flex-start; /* Memastikan gambar dan konten terletak di atas */
-            gap: 180px; /* Jarak antara gambar dan konten */
+            align-items: flex-start;
+            gap: 180px;
+            position: relative;
         }
 
         .kaprodi-image {
@@ -144,11 +173,35 @@
             height: 456px;
             object-fit: cover;
             border-radius: 5px;
+            animation: fadeInLeft 1.5s ease-out; /* Animasi fade in dari kiri pada gambar kaprodi */
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         .content {
             color: #242632;
-            text-align: justify; /* Rata kanan-kiri untuk teks */
+            text-align: justify;
+            animation: fadeInRight 1.5s ease-out; /* Animasi fade in dari kanan pada konten */
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         h1, p {
@@ -165,8 +218,102 @@
         p {
             font-size: 18px;
             line-height: 1.6;
-            font-weight: 400; /* Non-bold font weight for content */
-            margin-bottom: 20px; /* Jarak antar paragraf */
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .about-section {
+    width: 100%;
+    margin: 0;
+    background: linear-gradient(90deg, #0394ba, #9ad5a9);
+    background-size: 200% 200%; /* Memastikan gradient dapat bergerak */
+    padding: 80px 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    position: relative;
+    animation: fadeInSection 1.5s ease-out, gradientAnimation 5s ease infinite; /* Menambahkan animasi gradient */
+}
+
+@keyframes fadeInSection {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+
+        .about-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .about-section p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 15px; /* Mengurangi jarak antara paragraf */
+            text-align: center; /* Memusatkan teks */
+            max-width: 800px; /* Mengatur lebar maksimum untuk paragraf */
+            margin-left: auto; /* Mengatur margin otomatis untuk mengatur posisi */
+            margin-right: auto; /* Mengatur margin otomatis untuk mengatur posisi */
+        }
+        
+        .about-section br {
+            display: none; /* Menghilangkan elemen <br> dari tampilan */
+        }        
+
+        .video-container {
+            position: relative;
+            width: 782px;
+            height: 440px;
+            margin: 0 auto;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 5px; /* Rounded corners pada iframe */
+        }
+
+        .video-container .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('/images/video.png') no-repeat center center;
+            background-size: cover;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px; /* Rounded corners pada overlay */
+            transition: opacity 0.3s ease; /* Animasi perubahan opacity pada overlay */
+        }
+
+        .video-container .video-overlay::after {
+            content: '';
+            width: 50px;
+            height: 50px;
+            background: url('https://img.icons8.com/ios/50/ffffff/play.png') no-repeat center center;
+            background-size: contain;
         }
     </style>
 </head>
@@ -200,10 +347,30 @@
         <div class="content">
             <h1>Sambutan Kaprodi</h1>
             <p>Salam sejahtera untuk kita semua</p>
-            <p>Selamat datang di website resmi Program Studi S1 Sistem Informasi Fakultas Informatika Institut Teknologi Telkom Purwokerto. Dengan adanya website ini diharapkan dapat memberikan infosi mengenai Program Studi S1 Sistem Informasi Fakultas Informatika Institut Teknologi Telkom Purwokerto.</p>
+            <p>Selamat datang di website resmi Program Studi S1 Sistem Informasi Fakultas Informatika Institut Teknologi Telkom Purwokerto. Dengan adanya website ini diharapkan dapat memberikan informasi mengenai Program Studi S1 Sistem Informasi Fakultas Informatika Institut Teknologi Telkom Purwokerto.</p>
             <p>Program Studi S1 Sistem Informasi Fakultas Informatika Institut Teknologi Telkom Purwokerto memiliki visi: “Tahun 2027 menjadi Program Studi berdaya saing Internasional dalam pengembangan dan pengelolaan Sistem Informasi yang mendukung kebutuhan industri serta memiliki kompetensi mandiri dan interpersonal.” Tujuan Program Studi S1 Sistem Informasi Fakultas Informatika Institut Teknologi Telkom Purwokerto yaitu menghasilkan lulusan yang berkompeten di bidang pengembangan dan pengelolaan Sistem Informasi yang berdaya saing internasional.</p>
         </div>
     </div>
+    <div class="about-section">
+        <h2>Sekilas tentang S1 Sistem Informasi</h2>
+        <p>Kenalan dengan Sistem Informasi ITTP Video berikut berisi penjelasan apa itu Sistem Informasi, ciri khas Sistem Informasi ITTP, kurikulum Sistem Informasi ITTP dan prospek ke depan.</>
+        <div class="video-container">
+            <div class="video-overlay" onclick="playVideo()"></div>
+            <iframe src="https://www.youtube.com/embed/SZKQpEo4q9E" allowfullscreen></iframe>
+        </div>
+    </div>
+    <script>
+        function playVideo() {
+            const overlay = document.querySelector('.video-overlay');
+            const iframe = document.querySelector('.video-container iframe');
+            const src = iframe.src;
+            iframe.src = src + '?autoplay=1';
+            overlay.style.opacity = '0'; /* Menyembunyikan overlay dengan animasi */
+            setTimeout(() => {
+                overlay.style.display = 'none'; /* Menghapus overlay setelah animasi */
+            }, 300); // Durasi sama dengan transisi opacity
+        }
+    </script>
 </body>
 <script src="js/modernizr.js"></script>
 </html>
