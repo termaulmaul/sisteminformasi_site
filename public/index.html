@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistem Informasi Site</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="js/modernizr.js"></script>
     <style>
         body {
@@ -416,27 +420,31 @@ nav ul li ul li a:hover {
         .lecturer-profiles {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 20px;
+            flex-wrap: nowrap;
+            gap: 20px; /* Atur jarak antar gambar agar lebih lebar */
+            overflow-x: auto;
         }
         
         .lecturer-profiles img {
-            width: 30%;
+            flex: 0 0 auto;
+            max-width: 300px; /* Perbesar ukuran maksimal gambar */
             height: auto;
-            border-radius: 5px;
-            object-fit: cover;
-        }        
-
-        .btn-see-more {
-            display: inline-block;
-            background: linear-gradient(90deg, #0394ba, #9ad5a9);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.3s ease, transform 0.3s ease;
         }
         
+        .lecturer-section {
+            margin-bottom: 20px; /* Tambahkan jarak bawah agar tidak terlalu menempel dengan tombol */
+        }
+        
+        .btn-see-more {
+            display: inline-block;
+            margin-top: 20px; /* Beri jarak vertikal antara gambar dan tombol */
+            padding: 10px 20px; /* Atur padding agar tombol terlihat lebih besar */
+            background: linear-gradient(90deg, #027aa4, #7dbf8d);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px; /* Agar sudut tombol lebih menarik */
+        }
+      
         .btn-see-more:hover {
             background: linear-gradient(90deg, #027aa4, #7dbf8d);
             transform: scale(1.05);
@@ -494,14 +502,18 @@ nav ul li ul li a:hover {
         <img src="/images/Gmn-min.png" alt="Gmn-min" class="how-to-become-image">
     </div>
     <div class="lecturer-section">
-        <h2>Dosen <span>S1 Sistem Informasi</span></h2>
+        <h2>Dosen S1 Sistem Informasi</h2>
         <div class="lecturer-profiles">
-            <img src="/images/Muhamad-Awiet-Wiedanto-Prasetyo-S.Kom_.-M.MSI_.png" alt="Muhamad Awiet Wiedanto Prasetyo S.Kom_.M.MSI">
-            <img src="/images/Resad-SetyadiS.T.S.Si_.MMSI_.png" alt="Resad Setyadi S.T.S.Si.MMSI">
-            <img src="/images/Mahazzam-Afrad-S.Kom_.-M.Kom-1.png" alt="Mahazzam Afrad S.Kom.M.Kom">
+            <img src="assets/images/dosensi1.png" alt="Dosen 1">
+            <img src="assets/images/dosensi2.png" alt="Dosen 2">
+            <img src="assets/images/dosensi3.png" alt="Dosen 3">
+            <!-- Tambahkan gambar dosen lainnya -->
         </div>
         <a href="#" class="btn-see-more">Lihat Selengkapnya</a>
-    </div>    
+    </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>    
     <script>
         function playVideo() {
             const overlay = document.querySelector('.video-overlay');
@@ -513,6 +525,17 @@ nav ul li ul li a:hover {
                 overlay.style.display = 'none'; /* Menghapus overlay setelah animasi */
             }, 300); // Durasi sama dengan transisi opacity
         }
+        $(document).ready(function() {
+            $('.lecturer-slider').slick({
+                slidesToShow: 1,  // Tampilkan 1 baris setiap waktu
+                slidesToScroll: 1,
+                arrows: true,
+                dots: true,
+                infinite: true,
+                autoplay: true,
+                autoplaySpeed: 3000,
+            });
+        });
     </script>
 </body>
 <script src="js/modernizr.js"></script>
