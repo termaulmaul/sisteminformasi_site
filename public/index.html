@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -449,6 +448,48 @@ nav ul li ul li a:hover {
             background: linear-gradient(90deg, #027aa4, #7dbf8d);
             transform: scale(1.05);
         }        
+                /* Centering the title "Prestasi Mahasiswa" */
+                .prestasi-title {
+                    text-align: center;
+                    font-size: 36px;
+                    font-weight: 600;
+                    margin-top: 50px;
+                }
+        
+                /* Centering the image */
+                .prestasi-image {
+                    display: block;
+                    margin: 0 auto;
+                }
+                /* CSS untuk menampilkan gambar prestasi mahasiswa */
+.prestasi-mahasiswa {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 40px 0;
+}
+
+.prestasi-mahasiswa .gambar-besar {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.prestasi-mahasiswa .gambar-kecil-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Jarak antara gambar kecil */
+}
+
+.prestasi-mahasiswa .gambar-kecil {
+    width: 140px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
     </style>
 </head>
 
@@ -515,9 +556,20 @@ nav ul li ul li a:hover {
     <div class="pembatas">
         <img src="assets/images/Pattern-4-2.png" alt="">
     </div>
-    <div class="prestasi-mahasiswa">
-        <h1>Prestasi Mahasiswa</h1>
-    </div>
+        <div class="prestasi-section">
+            <h2 class="prestasi-title">Prestasi Mahasiswa</h2>
+            <img loading="lazy" decoding="async" width="578" height="612" 
+                 src="https://bis-pwt.telkomuniversity.ac.id/wp-content/uploads/2024/03/Prestasi-Mahasiswa-Informasi-min-1.png" 
+                 class="prestasi-mahasiswa" 
+                 alt="Prestasi Mahasiswa" 
+                 srcset="https://bis-pwt.telkomuniversity.ac.id/wp-content/uploads/2024/03/Prestasi-Mahasiswa-Informasi-min-1.png 578w, 
+                         https://bis-pwt.telkomuniversity.ac.id/wp-content/uploads/2024/03/Prestasi-Mahasiswa-Informasi-min-1-570x604.png 570w" 
+                 sizes="(max-width: 578px) 100vw, 578px">
+                 <div class="gambar-kecil-container">
+                 <img loading="lazy" decoding="async" width="610" height="290" src="https://bis-pwt.telkomuniversity.ac.id/wp-content/uploads/2024/03/Prestasi-Mahasiswa-Informasi-2-min.png" class="gambar-kecil" alt="" srcset="https://bis-pwt.telkomuniversity.ac.id/wp-content/uploads/2024/03/Prestasi-Mahasiswa-Informasi-2-min.png 610w, https://bis-pwt.telkomuniversity.ac.id/wp-content/uploads/2024/03/Prestasi-Mahasiswa-Informasi-2-min-570x271.png 570w" sizes="(max-width: 610px) 100vw, 610px">
+                 <img loading="lazy" decoding="async" width="610" height="290" src="https://bis-pwt.telkomuniversity.ac.id/wp-content/uploads/2024/03/Prestasi-Mahasiswa-Informasi-3-min.png" class="gambar-kecil" alt="" srcset="https://bis-pwt.telkomuniversity.ac.id/wp-content/uploads/2024/03/Prestasi-Mahasiswa-Informasi-3-min.png 610w, https://bis-pwt.telkomuniversity.ac.id/wp-content/uploads/2024/03/Prestasi-Mahasiswa-Informasi-3-min-570x271.png 570w" sizes="(max-width: 610px) 100vw, 610px">
+                </div>
+                </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>    
