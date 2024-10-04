@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - Sistem Informasi Site</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="js/modernizr.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: #333;
+        }
+
+        header {
+            background-color: #FFFFFF;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            height: 71px;
+            width: 190px;
+            margin-right: 15px;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            position: relative;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #242632;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 5px 10px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: linear-gradient(90deg, #0394ba, #9ad5a9);
+            transform: scale(1.1);
+        }
+
+        /* Dropdown Styling */
+        nav ul li ul {
+            position: absolute;
+            top: 40px;
+            left: 0;
+            background-color: white;
+            padding: 10px 0;
+            display: none;
+            list-style: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        nav ul li ul li {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li ul li a {
+            color: #242632;
+            padding: 10px 20px;
+            white-space: nowrap;
+        }
+
+        nav ul li ul li a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .btn-daftar {
+            background: linear-gradient(90deg, #0394ba, #9ad5a9);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .btn-daftar:hover {
+            background: linear-gradient(90deg, #027aa4, #7dbf8d);
+        }
+
+        .container {
+            width: 80%;
+            margin: 40px auto;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 44px;
+            font-weight: 600;
+            color: #242632;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .about-us-section {
+            margin-top: 50px;
+            text-align: justify;
+        }
+
+        .about-us-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #242632;
+        }
+
+        .about-us-section p {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .team-section {
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        .team-section h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            background: linear-gradient(90deg, #0394ba, #9ad5a9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .team-profiles {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .team-profiles img {
+            width: 250px;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background-color: #0394ba;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="/images/ittp_logo.png" alt="Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li>
+                    <a href="tentangkami.html" class="active">Tentang Kami</a>
+                    <ul>
+                        <li><a href="#">Sejarah</a></li>
+                        <li><a href="#">Visi & Misi</a></li>
+                        <li><a href="#">Struktur Organisasi</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Kurikulum</a></li>
+                <li><a href="#">Artikel</a></li>
+                <li><a href="#">Alumni</a></li>
+                <li><a href="#">Final Project</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="btn-daftar">Pendaftaran</a>
+        <img src="/images/si_logo.png" alt="Logo" class="logo">
+    </header>
+
+    <div class="container">
+        <h1>Tentang Kami</h1>
+        <div class="about-us-section">
+            <h2>Siapa Kami?</h2>
+            <p>Kami adalah tim yang berdedikasi untuk memberikan informasi dan edukasi berkualitas melalui platform Sistem Informasi. Dengan pengalaman di berbagai bidang, kami berkomitmen untuk membantu masyarakat dalam memahami dan memanfaatkan teknologi informasi dengan lebih baik.</p>
+            <p>Visi kami adalah menciptakan platform yang dapat diandalkan dalam menyediakan solusi terbaik bagi pengguna dalam mendapatkan akses informasi yang akurat dan relevan.</p>
+        </div>
+
+        <div class="team-section">
+            <h2>Tim Kami</h2>
+            <div class="team-profiles">
+                <img src="/images/team1.jpg" alt="Anggota Tim 1">
+                <img src="/images/team2.jpg" alt="Anggota Tim 2">
+                <img src="/images/team3.jpg" alt="Anggota Tim 3">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Sistem Informasi Site. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

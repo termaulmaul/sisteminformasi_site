@@ -79,7 +79,10 @@
             transition: color 0.3s ease, transform 0.3s ease;
         }
 
-        nav ul li a:hover,
+        nav ul li a:hover {
+            color: linear-gradient(90deg, #0394ba, #9ad5a9);
+            transform: scale(1.1);
+        }
         nav ul li a.active {
             color: linear-gradient(90deg, #0394ba, #9ad5a9);
             transform: scale(1.1); /* Membesarkan elemen saat hover */
@@ -358,7 +361,7 @@ nav ul li ul li a:hover {
             flex: 1;
             padding-right: 20px; /* Ruang antara konten dan gambar */
         }
-        
+       
         .how-to-become-content h2 {
             font-size: 36px;
             margin-bottom: 20px;
@@ -459,7 +462,7 @@ nav ul li ul li a:hover {
             <ul>
                 <li><a href="/" class="active">Beranda</a></li>
                 <li>
-                    <a href="#">Tentang Kami</a>
+                    <a href="tentangkami.html">Tentang Kami</a>
                     <ul>
                         <li><a href="#">Sejarah</a></li>
                         <li><a href="#">Visi & Misi</a></li>
