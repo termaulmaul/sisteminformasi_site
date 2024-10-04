@@ -18,6 +18,8 @@
             padding: 0;
             background-color: white;
             color: #333;
+            max-width: 100%;
+            overflow-x: hidden; /* Mencegah scroll horizontal */
         }
 
         header {
@@ -77,40 +79,56 @@
             transition: color 0.3s ease, transform 0.3s ease;
         }
 
-        nav ul li a:hover {
-            color: linear-gradient(90deg, #0394ba, #9ad5a9);
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: #0394ba;
             transform: scale(1.1);
         }
 
-        /* Dropdown Styling */
-        nav ul li ul {
+        nav ul li a.active::after {
+            content: '';
             position: absolute;
-            top: 40px;
+            bottom: -5px;
             left: 0;
-            background-color: white;
-            padding: 10px 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #0394ba, #9ad5a9);
+            border-radius: 2px;
+        }
+
+        /* Dropdown styling */
+        nav ul li ul {
             display: none;
-            list-style: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #FFFFFF;
+            padding: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            width: 200px;
         }
 
         nav ul li:hover ul {
             display: block;
-        }
-
-        nav ul li ul li {
-            margin: 0;
-            padding: 0;
+            opacity: 1;
         }
 
         nav ul li ul li a {
-            color: #242632;
             padding: 10px 20px;
-            white-space: nowrap;
+            background: none;
+            color: #242632;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         nav ul li ul li a:hover {
-            background-color: #f1f1f1;
+            background: linear-gradient(90deg, #0394ba, #9ad5a9);
+            color: white;
         }
 
         .btn-daftar {
@@ -128,7 +146,7 @@
         }
 
         .container {
-            width: 80%;
+            max-width: 1200px; /* Membatasi lebar container */
             margin: 40px auto;
             text-align: center;
             padding: 20px;
@@ -226,10 +244,12 @@
 
     <div class="container">
         <h1>Tentang Kami</h1>
-        <div class="about-us-section">
-            <h2>Siapa Kami?</h2>
-            <p>Kami adalah tim yang berdedikasi untuk memberikan informasi dan edukasi berkualitas melalui platform Sistem Informasi. Dengan pengalaman di berbagai bidang, kami berkomitmen untuk membantu masyarakat dalam memahami dan memanfaatkan teknologi informasi dengan lebih baik.</p>
-            <p>Visi kami adalah menciptakan platform yang dapat diandalkan dalam menyediakan solusi terbaik bagi pengguna dalam mendapatkan akses informasi yang akurat dan relevan.</p>
+        <img src="/images/Kaprodi-S1-Informasi.png" alt="Kaprodi" class="kaprodi-image">
+        <div class="container">
+            <h1>Sambutan Kaprodi</h1>
+            <p>Salam sejahtera untuk kita semua</p>
+            <p>Selamat datang di website resmi Program Studi S1 Sistem Informasi Fakultas Informatika Institut Teknologi Telkom Purwokerto. Dengan adanya website ini diharapkan dapat memberikan informasi mengenai Program Studi S1 Sistem Informasi Fakultas Informatika Institut Teknologi Telkom Purwokerto.</p>
+            <p>Program Studi S1 Sistem Informasi Fakultas Informatika Institut Teknologi Telkom Purwokerto memiliki visi: “Tahun 2027 menjadi Program Studi berdaya saing Internasional dalam pengembangan dan pengelolaan Sistem Informasi yang mendukung kebutuhan industri serta memiliki kompetensi mandiri dan interpersonal.” Tujuan Program Studi S1 Sistem Informasi Fakultas Informatika Institut Teknologi Telkom Purwokerto yaitu menghasilkan lulusan yang berkompeten di bidang pengembangan dan pengelolaan Sistem Informasi yang berdaya saing internasional.</p>
         </div>
 
         <div class="team-section">
@@ -243,9 +263,8 @@
     </div>
 
     <footer>
-        <p>&copy; 2024 Sistem Informasi Site. All rights reserved.</p>
+        <p>&copy; 2024 Sistem Informasi Site. Semua hak dilindungi.</p>
     </footer>
-
 </body>
 
 </html>
